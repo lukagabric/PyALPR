@@ -58,8 +58,6 @@ class PlateReader:
                     ordinal += 1
                     print "Guess {0:d}: {1:s} {2:.2f}%".format(ordinal, candidate["plate"], candidate["confidence"])
 
-        print "------------"
-
 
 if __name__=="__main__":
     plate_reader = PlateReader()
