@@ -1,7 +1,7 @@
 import os, shlex, subprocess
 
 if __name__=="__main__":
-    webcam_command = "fswebcam -r 640x480 -S 20 --no-banner alpr.jpg"
+    webcam_command = "fswebcam -r 640x480 -S 20 --no-banner --quiet alpr.jpg"
     webcam_command_args = shlex.split(webcam_command)
 
     webcam_proc = subprocess.Popen(webcam_command_args, stdout=subprocess.PIPE)
