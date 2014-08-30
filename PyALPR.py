@@ -26,16 +26,16 @@ if __name__=="__main__":
             order += 1
             print "Plate {0:d}: {1:s}".format(order, plate)
 
-    candidates = alpr_json["results"]["candidates"]
+        candidates = result["candidates"]
 
-    print "Total candidates: %d" % len(candidates)
+        print "Total candidates: %d" % len(candidates)
 
-    order = 0
-    for candidate in candidates:
-        matches_template = candidate["matches_template"]
-        if matches_template == 1:
-            plate = candidate["plate"]
-            order += 1
-            print "Plate {0:d}: {1:s}".format(order, plate)
+        order = 0
+        for candidate in candidates:
+            matches_template = candidate["matches_template"]
+            if matches_template == 1:
+                plate = candidate["plate"]
+                order += 1
+                print "Plate {0:d}: {1:s}".format(order, plate)
 
     print "------------"
