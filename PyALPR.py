@@ -16,12 +16,14 @@ if __name__=="__main__":
     alpr_json = json.loads(alpr_out)
     results = alpr_json["results"]
 
+    print "Total results: %d".format()
+
     order = 0
     for result in results:
         matches_template = result["matches_template"]
         if matches_template == 1:
             plate = result["plate"]
             order += 1
-            print "Plate {0:d}.: %s".format(order, plate)
+            print "Plate {0:d}: {1:s}".format(order, plate)
 
     print "------------"
