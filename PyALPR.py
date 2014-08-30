@@ -13,8 +13,6 @@ if __name__=="__main__":
     alpr_proc = subprocess.Popen(alpr_command_args, stdout=subprocess.PIPE)
     (alpr_out, alpr_err) = alpr_proc.communicate()
 
-    print(alpr_out)
-
     alpr_json = json.loads(alpr_out)
     results = alpr_json["results"]
 
@@ -28,9 +26,7 @@ if __name__=="__main__":
             order += 1
             print "Plate {0:d}: {1:s}".format(order, plate)
 
-    candidates_str = results["candidates"]
-    print candidates_str
-    candidates = json.loads()
+    candidates = alpr_json["results"]["candidates"]
 
     print "Total candidates: %d" % len(candidates)
 
