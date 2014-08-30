@@ -1,7 +1,7 @@
 import os, shlex, subprocess
 
 if __name__=="__main__":
-    webcam_command = "fswebcam -r 640x480 --no-banner alpr.jpg"
+    webcam_command = "fswebcam -r 320x240 -S 20 --no-banner alpr.jpg"
     os.system(webcam_command)
 
     alpr_command = "alpr -c eu -t hr -n 300 -j alpr.jpg"
