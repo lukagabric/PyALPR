@@ -28,11 +28,11 @@ if __name__=="__main__":
             order += 1
             print "Plate {0:d}: {1:s}".format(order, plate)
 
-    print "Total candidates: %d" % len(candidates)
-
     candidates_str = results["candidates"]
     print candidates_str
     candidates = json.loads()
+
+    print "Total candidates: %d" % len(candidates)
 
     order = 0
     for candidate in candidates:
