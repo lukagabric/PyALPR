@@ -13,6 +13,8 @@ if __name__=="__main__":
     alpr_proc = subprocess.Popen(alpr_command_args, stdout=subprocess.PIPE)
     (alpr_out, alpr_err) = alpr_proc.communicate()
 
+    print(alpr_out)
+
     alpr_json = json.loads(alpr_out)
     results = alpr_json["results"]
 
