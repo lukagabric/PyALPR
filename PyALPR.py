@@ -24,7 +24,7 @@ if __name__=="__main__":
         if matches_template == 1:
             plate = result["plate"]
             order += 1
-            print "Plate {0:d}: {1:s}".format(order, plate)
+            print "Plate {0:d}: {1:s} {2:%.2f}".format(order, plate, result["confidence"])
 
         candidates = result["candidates"]
 
@@ -36,6 +36,6 @@ if __name__=="__main__":
             if matches_template == 1:
                 plate = candidate["plate"]
                 order += 1
-                print "Plate {0:d}: {1:s}".format(order, plate)
+                print "Plate {0:d}: {1:s} {2:%.2f}".format(order, plate, candidate["confidence"])
 
     print "------------"
