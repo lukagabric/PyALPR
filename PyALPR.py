@@ -29,7 +29,7 @@ class PlateReader:
 
         if not alpr_error is None:
             return None, alpr_error
-        elif alpr_out == "No license plates found.":
+        elif "No license plates found." in alpr_out:
             return None, None
 
         try:
@@ -43,6 +43,10 @@ class PlateReader:
 
         if not alpr_error is None:
             print alpr_error
+            return
+
+        if alpr_json is None:
+            print "No results!"
             return
 
         results = alpr_json["results"]
