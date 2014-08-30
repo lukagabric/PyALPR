@@ -56,7 +56,7 @@ class PlateReader:
             for candidate in candidates:
                 if candidate["matches_template"] == 1:
                     ordinal += 1
-                    print "Plate {0:d}: {1:s} {2:.2f}%".format(ordinal, candidate["plate"], candidate["confidence"])
+                    print "Guess {0:d}: {1:s} {2:.2f}%".format(ordinal, candidate["plate"], candidate["confidence"])
 
         print "------------"
 
