@@ -7,6 +7,6 @@ if __name__=="__main__":
     alpr_command = "alpr -c eu -t hr -n 300 -j alpr.jpg"
     alpr_command_args = shlex.split(alpr_command)
 
-    alpr_proc = subprocess.Popen(alpr_command_args, stdout=subprocess.PIPE, shell=True)
+    alpr_proc = subprocess.Popen(alpr_command_args, stdout=subprocess.PIPE)
     (out, err) = alpr_proc.communicate()
     print "program output:", out
