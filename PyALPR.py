@@ -25,6 +25,8 @@ class PlateReader:
         self.webcam_subprocess().communicate()
         alpr_out, alpr_error = self.alpr_subprocess().communicate()
 
+        print "'" + alpr_out + "'"
+
         if not alpr_error is None:
             return None, alpr_error
         elif alpr_out == "No license plates found.":
