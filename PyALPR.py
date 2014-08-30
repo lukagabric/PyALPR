@@ -16,7 +16,7 @@ if __name__=="__main__":
     alpr_json = json.loads(alpr_out)
     results = alpr_json["results"]
 
-    print "Total results: %d".format()
+    print "Total results: %d" % len(results)
 
     order = 0
     for result in results:
