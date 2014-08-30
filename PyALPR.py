@@ -74,9 +74,6 @@ class PlateReader:
         print "------------"
 
 
-
-
-
 if __name__=="__main__":
     plate_reader = PlateReader()
     plate_reader.read_plate()
