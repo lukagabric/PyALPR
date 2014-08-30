@@ -47,17 +47,16 @@ class PlateReader:
             print "No results!"
             return
 
-        candidates = alpr_json["results"]["candidates"]
+        results = alpr_json["results"]
 
-        print "Total candidates: %d" % len(candidates)
+        ordinal = 0
+        for result in results:
+            candidates = result["candidates"]
 
-        order = 0
-        for candidate in candidates:
-            matches_template = candidate["matches_template"]
-            if matches_template == 1:
-                plate = candidate["plate"]
-                order += 1
-                print "Plate {0:d}: {1:s} {2:.2f}%".format(order, plate, candidate["confidence"])
+            for candidate in candidates:
+                if candidate["matches_template"] == 1:
+                    ordinal += 1
+                    print "Plate {0:d}: {1:s} {2:.2f}%".format(ordinal, candidate["plate"], candidate["confidence"])
 
         print "------------"
 
